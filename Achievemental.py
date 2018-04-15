@@ -1,14 +1,3 @@
-#get_message
-#edit_role
-#discord.utils.find
-#class discord.User
-#get_member_named(name)
-#[:-1]
-#discord.Client.add_roles(discord.Client.get_user_info(None, ("%s" % (args[1]))), '<@&423269531805548545>')
-#getUsername = re.compile('/([!])+/g')
-#and message.author == discord.User.bot
-#client.wait_for
-
 import discord
 from discord.ext.commands import Bot
 from discord.ext import commands
@@ -22,8 +11,10 @@ global TERMS
 global purchased
 global swearWords
 global canRun
+#For the Holy Golden Duck achievement
 TERMS = ['collected', 'golden', 'duck']
-swearWords = ['fuck']
+#For "Sneaky Operations"
+swearWords = ['insert', 'swear', 'words', 'here']
 canRun = True
 
 Client = discord.Client()
@@ -31,25 +22,16 @@ client = commands.Bot(command_prefix = '-a ')
 wallet_grabbable = False
 purchased = False
 
-'''
 @client.event
 async def on_ready():
     print('We have logged in as {0.user}'.format(client))
-'''
 
 @client.event
 async def on_message(message):
 
     if message.author == client.user:
         return
-
-    if message.content.startswith('-a Trolololol'):
-        await client.send_message(message.channel, 'Your first clue is \"\'''CjMwIDMxIDMwIDMwIDMwIDMxIDMwIDMwIDIwIDMwIDMxIDMxIDMwIDMxIDMxIDMxIDMxIDIwIDMwIDMwIDMxIDMwIDMwIDMwIDMwIDMwIDIwIDMwIDMwIDMwIDMwIDMxIDMwIDMxIDMwIDIwIDMwIDMwIDMxIDMwIDMxIDMxIDMwIDMxIDIwIDMwIDMxIDMxIDMwIDMwIDMwIDMwIDMxIDIwIDMwIDMwIDMxIDMwIDMwIDMwIDMwIDMwIDIwIDMwIDMxIDMxIDMwIDMxIDMwIDMxIDMxIDIwIDMwIDMxIDMxIDMxIDMwIDMxIDMxIDMwIDIwIDMwIDMxIDMxIDMwIDMwIDMxIDMwIDMxIDIwIDMwIDMwIDMxIDMxIDMxIDMwIDMwIDMxIDIwIDMwIDMxIDMxIDMxIDMwIDMwIDMxIDMwIDIwIDMwIDMwIDMxIDMxIDMxIDMwIDMwIDMwIDIwIDMwIDMxIDMxIDMxIDMwIDMxIDMwIDMwIDIwIDMwIDMxIDMxIDMxIDMxIDMwIDMwIDMxIDIwIDMwIDMwIDMxIDMxIDMwIDMxIDMwIDMwIDIwIDMwIDMwIDMxIDMxIDMxIDMwIDMwIDMwIDIwIDMwIDMwIDMxIDMxIDMxIDMwIDMwIDMxIDIwIDMwIDMxIDMxIDMxIDMwIDMxIDMxIDMxIDIwIDMwIDMxIDMxIDMwIDMwIDMxIDMwIDMxIDIwIDMwIDMxIDMxIDMwIDMwIDMxIDMxIDMwIDIwIDMwIDMxIDMxIDMwIDMwIDMxIDMwIDMwIDIwIDMwIDMxIDMxIDMwIDMwIDMwIDMxIDMxIDIwIDMwIDMxIDMxIDMxIDMxIDMwIDMwIDMwIDIwIDMwIDMxIDMxIDMwIDMxIDMwIDMxIDMwIDIwIDMwIDMxIDMxIDMwIDMwIDMwIDMxIDMwIDIwIDMwIDMxIDMxIDMwIDMwIDMxIDMxIDMwIDIwIDMwIDMxIDMxIDMxIDMwIDMwIDMxIDMwIDIwIDMwIDMxIDMxIDMxIDMwIDMxIDMwIDMxIDIwIDMwIDMxIDMxIDMwIDMxIDMwIDMwIDMxIDIwIDMwIDMxIDMxIDMwIDMxIDMxIDMxIDMxIDIwIDMwIDMxIDMxIDMxIDMwIDMwIDMxIDMxIDIwIDMwIDMxIDMxIDMwIDMwIDMxIDMwIDMwIDIwIDMwIDMxIDMxIDMwIDMwIDMxIDMxIDMwIDIwIDMwIDMxIDMxIDMwIDMxIDMwIDMwIDMwIDIwIDMwIDMxIDMxIDMwIDMxIDMwIDMwIDMxIDIwIDMwIDMxIDMxIDMwIDMxIDMxIDMxIDMxIDIwIDMwIDMxIDMxIDMwIDMwIDMxIDMwIDMwIDIwIDMwIDMxIDMxIDMwIDMwIDMwIDMxIDMxIDIwIDMwIDMxIDMxIDMxIDMxIDMwIDMwIDMwIDIwIDMwIDMwIDMxIDMxIDMwIDMwIDMxIDMxIDIwIDMwIDMwIDMxIDMxIDMxIDMwIDMwIDMxIDIwIDMwIDMxIDMxIDMwIDMwIDMxIDMwIDMxIDIwIDMwIDMxIDMxIDMxIDMwIDMxIDMwIDMwIDIwIDMwIDMxIDMxIDMxIDMwIDMxIDMwIDMxIDIwIDMwIDMxIDMxIDMwIDMwIDMxIDMwIDMxIDIwIDMwIDMxIDMxIDMxIDMwIDMwIDMxIDMwIDIwIDMwIDMxIDMxIDMwIDMwIDMxIDMxIDMwIDIwIDMwIDMxIDMxIDMwIDMwIDMxIDMwIDMwIDIwIDMwIDMxIDMxIDMxIDMxIDMxIDMxIDMwIDIwIDMwIDMwIDMxIDMxIDMxIDMwIDMwIDMwIDIwIDMwIDMxIDMxIDMxIDMxIDMwIDMwIDMxIDIwIDMwIDMxIDMxIDMxIDMwIDMxIDMwIDMxIDIwIDMwIDMwIDMxIDMxIDMxIDMwIDMwIDMwIDIwIDMwIDMxIDMxIDMwIDMwIDMxIDMwIDMxIDIwIDMwIDMxIDMxIDMxIDMwIDMxIDMwIDMxIDIwIDMwIDMxIDMxIDMxIDMwIDMwIDMxIDMwIDIwIDMwIDMxIDMxIDMxIDMxIDMwIDMwIDMxIDIwIDMwIDMxIDMxIDMxIDMxIDMxIDMxIDMwIDIwIDMwIDMxIDMxIDMxIDMxIDMxIDMxIDMwIDIwIDMwIDMxIDMxIDMxIDMxIDMxIDMxIDMwIDIwIDMwIDMxIDMxIDMwIDMwIDMwIDMwIDMwIDIwIDMwIDMxIDMxIDMwIDMwIDMwIDMwIDMwIDIwIDMwIDMxIDMxIDMwIDMwIDMwIDMwIDMwIDIwIDMwIDMxIDMxIDMxIDMwIDMxIDMwIDMxIDIwIDMwIDMxIDMxIDMxIDMwIDMwIDMxIDMwIDIwIDMwIDMxIDMxIDMxIDMwIDMxIDMxIDMxIDIwIDMwIDMxIDMxIDMwIDMxIDMxIDMxIDMxIDIwIDMwIDMxIDMxIDMwIDMwIDMxIDMwIDMxIDIwIDMwIDMxIDMxIDMwIDMxIDMwIDMwIDMxCg==\'''\"')
-
-
-    if message.content.startswith('-a kve9r8ty489wefdcxjbfruiosdfhiodcx39etuerfd~8yu8eury~~~```urwoei'):
-        await client.send_message(message.channel, '''The final challenge: zoigap69q7vsxz6prs2xdpmxxu2xqbbuxjryw3c4l4p4hc7qw9vrghnvume4yp2mttoj38t5xl1quizzdhjis87z0gqpimy9qcxbq81tovnfr1nh06skrh8hfttebeixybqb5myw9p0u8d8izt8djvoo0f985y6mhfakare5ap436wust8l5w4k61l30uy0lv9gwjpi2qcjdqsjzndedimmwmtr05zvto7es235qsovlrzw96x3ozu69oxbb4tqbgyos3q7xx132dewgx5ro3k6dvhz3tq19a9ydg0hagr3qcwiyke4hrkt1r2mvzuw0np3aw8i0q2ogkeytiz5qca50fer0fyfxj0zpemmdoza4vrbyi8hbr5kr9rh8qtwyjipla5qhyzj1xye5e33vc0f67nzp569cvuk7a4sfppy9jy420htfgi9whu6ek6dgw9vtx9d3hp37zklineuq3mcs51gofh460jfl0vnsjy7usl2dihbu3ccxrisvube5osv2ydlvd3wfc17nz6d61fjwwdt8fjauo77xhtv07x3cxt9afd8qcfhef9gkg5qglhl4f28yer5pr4tn1m8lnuvhxog43naor37e8v2uyjmlr3xvb0aqmu0l3ybwcvvciqskppwtpd0qz61a2o5dhk1wkxcuf767z0tr036t1omx0pzari6ugp32tfct8f1swqhq0ic7xqd1fjo3vgyyxy7zfti5wu7tw451b2jn81c953252bo20a546wqrr5cqm3c43nv6ci6cfm2tfmb4kvahuojip074bcxsyy2a29mzckaip836e5l2qhpwqzxrgzhit9pk7r6lcznl2x0h3m5uhjsfriuqdjs5gub23e0f2rkv7tdqlvaarrlh16898vfc4juo1ytu6ctyp7f5b0n4t52scuo0n6ttdq4ywagb551cfpdpvphqzk011t14ibh9ys688gj5d741r0nwt8jfki7qnzr3dwgc7qkripzkmtk58e6ewvemsbp8c4nys5cwgdyug4sevlhnjs3f77oe68rip34buhxf6w8bhjmfoyjzbwx4mheripnliarb2pcwx443et71tod2kyq3sinqihda6uj5ctbg8yjfrpe8mgsuia36ma52t15bd4t5xpu5ddoxje1ia4z3zo5bpg7y7irknnv6qh576ger58u2vox3s26llkm8c97vdkq46ga8m0g3rbjt3gpyhbve3chjaicem8h626efbw3oc0bnp94xox0mrogskhc5w7xl2h5v88a0xbpiwpruybybvh2out0e8u0n68jw51fbo57hf4fzy3xo0mvq0xmlnupxee8qwnk19fnd0ocl24rgeezlfizue2wdhcgusibeinmvt2ws03irr1hun85ydy1d2fqffmenyjcmfpsi6xcfczuuvac33afa7vclg2se5qwgbguyq045883fvl2wbqikba9hpemubc6qq8eosnchf6wn7hvsxtf891dph317s0x97zz30kdaoln2fv3911akgwaucrxtcvkks881yuw0irw7ox6okhtx9teoukee856t3z7s5kd568rjx6vez119it43m9y669ehzo304i77itdqakfm24kiab1skshzoeix3s93ekb0r1dl1ryk6tqxl51zdr01oxgm2twkzljniyzjlknm6ugk0592uiqj34du03y287wsrjo79gph093vp6fnqrbxd5lgq1hwu8ok5r09ec8vxqvrzbs2fneoh8l7ms2yw9lgf5sygkcsfv17g2fldgy7f34r72y7tmluh3l0nqrdu6vb1nr4d7jb79614y48hqczythwlmt2283t2l3g5xsjk46nfjqujydj3s5b1v10xha0kormcmedrzvtj70rateh6zmpjxt8qgkii9998lbeqgycmbhp64zbwilmcb648cxn3r11qg07nvy6tqrtnm2y4j3b1f0n145gi00ockbm9ww6gzglwz2we5iaobgamhyt68kev1vw6fo9kvv3gs4m840ys2gwv64xo9vtjpqgl4g7ekjfn23ci9c8atr9dduxwomyvi06ee9x0oo8sr4n3o5mha9v21yopplufth3dt5io62sldc2wfyiyts94qz8jpvfk2lj63nv0uuhxg23kjjq1i1a9h2b60vifoj8levfqagm12cntomi7l8pu6i0kd5kn8v6y5fr6pmvayd8jljqsfm1o34pdzkamjicdd9falrkgxa15b2lqg8oj9fzap9f5qdhw1rruox5psq1tkeroyi5s3sb96fjpbbt5c53i0txcvgwfatu1cbrien80ih6w4in56ktgkmgpvosz9nu87xrplo2xehhxbemlgl4lg1ob4d6mmf7v1qeqidrfuue6mx0bb535xdac0pg9t94d6j8t43h7yk9v9eh5g3jtjsvnkfsh134nmma780e0nfd3i2iu7yz48twph7i1g45ahhu6ctuypm5agjc7qsoppl030irvsie48mtxsazlgnnb9470iffdhustyzlfpz7zf654j5fnmun0ptb3smo3gvh4xzcvmdo657rx7no54xibnfvriqh21jtlp6qjnvj7cdx53y8zfzh4cuz6iy6yccrrxw1gsly74rcirrhku1z7xkgcd1slk64hv27mmr9sedz9eeeoylzi60acaemc1anwn7xfn3ugt46zs9kaoy0pg72kqsfbxgb0ka38x2673m48kopkd3l0mjyvc9njpk9l98cgd582oponde8fkpo1yel0t9hcb245ggo35v21ji1cpemqfyyazrgl6n9zefyor8rb571phyx9labu3xco5d1ryz7oy0whvhyg7puy137ftck81rneatzk7recj28cqcntes7rokoisz9hrn7ds3yldd4fhv8mtpkeiamjfg67zjkqr8nzwjtvng1vi83a1bj7gr6b02ypor2u2ix7l13ofisnbt53s1o17onrk8t9txchpczr1t4ybnmtyjx0ts5eywzpjm6xsrkwq3izcftf6v72xr2tuvardba56ee7t7aat0pbamam6o3ar13fknkncn8d0ztgeryf3qc7yp7vcjzsgy5pl7cf4omcpgi821f3z1ax3hjujfyl6q1zswpygaj4l1lo1cp6paby5hjt1mms81tf192uh56qp9sbzriwnzp71nfkt1xtgaikqo3pfc8rhrumjaux28rxupdlys4qksfl37gd
-                                  is your code. Wall:2 Shelf:3 Volume:10. Good luck.''')
+    
     canRun = True
     #Starting your Adventure
     if message.content.startswith('Congratulations') and message.author == message.guild.get_member('365975655608745985'):
@@ -155,37 +137,7 @@ async def on_message(message):
             await message.channel.send('Congratulations, ' + str(message.author) + '! You\'ve earned the "Memes I" achievement!')
     else:
         canRun = True
-
-    #Prestige 1
-    if message.content.startswith('-a prestige'):
-        role_names = [role.name for role in message.author.roles]
-        if 'Prestige #1' in role_names:
-            pass
-        elif 'Prestige #2' in role_names:
-            pass
-        elif 'Prestige #3' in role_names:
-            pass
-        elif 'Prestige #4' in role_names:
-            pass
-        else:
-            member = message.author
-            role_names = [role.name for role in member.roles]
-            if 'Rich Kid I (achievement)' in role_names and 'Bad Luck I (achievement)' in role_names and 'Helper I (achievement)' in role_names and 'Hypebeast I (achievement)' in role_names and 'The Holy, Golden Duck (achievement)' in role_names and 'Bad Boy(or girl) (achievement)' in role_names and 'Starting Your Adventure (achievement)' in role_names and 'Impersonator (achievement)' in role_names and 'Memes I (achievement)' in role_names:
-                removeRichKidI = discord.utils.get(message.guild.roles, name = 'Rich Kid I (achievement)')
-                removeBadLuckI = discord.utils.get(message.guild.roles, name = 'Bad Luck I (achievement)')
-                removeHelperI = discord.utils.get(message.guild.roles, name = 'Helper I (achievement)')
-                removeHypebeastI = discord.utils.get(message.guild.roles, name = 'Hypebeast I (achievement)')
-                removeGoldenDuck = discord.utils.get(message.guild.roles, name = 'The Holy, Golden Duck (achievement)')
-                removeBadBoy = discord.utils.get(message.guild.roles, name = 'Bad Boy(or girl) (achievement)')
-                removeStartingAdventure = discord.utils.get(message.guild.roles, name = 'Starting Your Adventure (achievement)')
-                removeImpersonator = discord.utils.get(message.guild.roles, name = 'Impersonator (achievement)')
-                removeMemesI = discord.utils.get(message.guild.roles, name = 'Memes I (achievement)')
-                await member.remove_roles(removeRichKidI, removeBadLuckI, removeHelperI, removeHypebeastI, removeGoldenDuck, removeBadBoy, removeStartingAdventure, removeImpersonator, removeMemesI, reason = '{0} is reaching Prestige 1!'.format(member))
-                roleChange = discord.utils.get(message.guild.roles, name = 'Prestige # 1')
-                generalChannel = discord.utils.get(message.guild.channels, name = 'general')
-                await member.add_roles(roleChange)
-                await generalChannel.send('Congratulations, ' + str(message.author) + '! You have reached Prestige 1!')
-    
+        
     #Bad Luck I
     try:
         test = message.embeds[0].description
@@ -229,6 +181,43 @@ async def on_message(message):
                     await message.channel.send('Congratulations, ' + str(member) + '! You\'ve earned the "Rich Kid I" achievement!')
     else:
         canRun = True
+
+    #Prestige Command
+    if message.content.startswith('-a prestige'):
+        role_names = [role.name for role in message.author.roles]
+        if 'Prestige #1' in role_names:
+            #Triggers Prestige 2 (W.I.P)
+            pass
+        elif 'Prestige #2' in role_names:
+            #Triggers Prestige 3 (W.I.P)
+            pass
+        elif 'Prestige #3' in role_names:
+            #Triggers Prestige 4 (W.I.P)
+            pass
+        elif 'Prestige #4' in role_names:
+            #Triggers Prestige 5 (W.I.P)
+            pass
+        else:
+            #Triggers Prestige 1
+            member = message.author
+            role_names = [role.name for role in member.roles]
+            if 'Rich Kid I (achievement)' in role_names and 'Bad Luck I (achievement)' in role_names and 'Helper I (achievement)' in role_names and 'Hypebeast I (achievement)' in role_names and 'The Holy, Golden Duck (achievement)' in role_names and 'Bad Boy(or girl) (achievement)' in role_names and 'Starting Your Adventure (achievement)' in role_names and 'Impersonator (achievement)' in role_names and 'Memes I (achievement)' in role_names:
+                removeRichKidI = discord.utils.get(message.guild.roles, name = 'Rich Kid I (achievement)')
+                removeBadLuckI = discord.utils.get(message.guild.roles, name = 'Bad Luck I (achievement)')
+                removeHelperI = discord.utils.get(message.guild.roles, name = 'Helper I (achievement)')
+                removeHypebeastI = discord.utils.get(message.guild.roles, name = 'Hypebeast I (achievement)')
+                removeGoldenDuck = discord.utils.get(message.guild.roles, name = 'The Holy, Golden Duck (achievement)')
+                removeBadBoy = discord.utils.get(message.guild.roles, name = 'Bad Boy(or girl) (achievement)')
+                removeStartingAdventure = discord.utils.get(message.guild.roles, name = 'Starting Your Adventure (achievement)')
+                removeImpersonator = discord.utils.get(message.guild.roles, name = 'Impersonator (achievement)')
+                removeMemesI = discord.utils.get(message.guild.roles, name = 'Memes I (achievement)')
+                await member.remove_roles(removeRichKidI, removeBadLuckI, removeHelperI, removeHypebeastI, removeGoldenDuck, removeBadBoy, removeStartingAdventure, removeImpersonator, removeMemesI, reason = '{0} is reaching Prestige 1!'.format(member))
+                roleChange = discord.utils.get(message.guild.roles, name = 'Prestige # 1')
+                generalChannel = discord.utils.get(message.guild.channels, name = 'general')
+                await member.add_roles(roleChange)
+                await generalChannel.send('Congratulations, ' + str(message.author) + '! You have reached Prestige 1!')
+    
+
     
 #PRESTIGE 2
 
@@ -312,7 +301,6 @@ async def on_message(message):
     #Voting!?
     if message.content.startswith('p!daily claim'):
         member = message.author
-        print('dfghv')
         if message.content.startswith('You got ') and message.author == message.guild.get_member('365975655608745985'):
             role_names = [role.name for role in member.roles]
             roleChange = discord.utils.get(message.guild.roles, name = 'Voting!? (achievement)')
@@ -320,7 +308,7 @@ async def on_message(message):
                 await member.add_roles(roleChange)
                 await message.channel.send('Congratulations, ' + str(member) + '! You\'ve earned the "Voting!?" achievement!')
 
-    #Sneaky Operations
+    #Sneaky Operations(W.I.P)
     if message.channel == discord.utils.get(message.guild.channels, name = 'christian-minecraft-server'):
         containsSwearing = False
         for i in swearWords:
@@ -331,7 +319,6 @@ async def on_message(message):
             time.sleep(43200)
             await message.author.send('12 hours left!')
             time.sleep(43200)
-            
         
 
 
@@ -356,4 +343,4 @@ async def on_member_update(before, after):
             await after.add_roles(roleChange)
             await discord.utils.get(after.guild.channels, name = 'general').send('Congratulations, ' + str(after) + '! You\'ve earned the "Impersonator" achievement!')
             
-client.run('NDI4MDczMDczMzI1ODk5Nzc2.DZ3svg.ejaQHsvLIBZXOpxM3xsJj9N3Z-k')
+client.run('Bot Token')
