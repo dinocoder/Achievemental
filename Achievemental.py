@@ -319,6 +319,7 @@ async def on_message(message):
             time.sleep(43200)
             await message.author.send('12 hours left!')
             time.sleep(43200)
+            #Not finished yet, comment out if you just need to run this
         
 
 
